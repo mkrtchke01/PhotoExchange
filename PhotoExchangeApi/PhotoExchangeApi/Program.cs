@@ -1,3 +1,4 @@
+using Applications;
 using Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddPersistence(builder.Configuration.GetConnectionString("DefaultConnection"));
+builder.Services.AddApplications();
 
 var app = builder.Build();
 
