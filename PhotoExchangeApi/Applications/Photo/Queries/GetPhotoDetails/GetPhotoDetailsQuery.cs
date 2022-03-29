@@ -2,7 +2,7 @@
 
 namespace Applications.Photo.Queries.GetPhotoDetails
 {
-    public class GetPhotoDetailsQuery : IRequest<Domain.Photo>
+    public class GetPhotoDetailsQuery : IRequest<GetPhotoDetailsVm>
     {
         public int ImageId { get; set; }
 

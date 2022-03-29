@@ -11,7 +11,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(PhotoExchangeDbContext))]
-    [Migration("20220328154020_init")]
+    [Migration("20220329111820_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
