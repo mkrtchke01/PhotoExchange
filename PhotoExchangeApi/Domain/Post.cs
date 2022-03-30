@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Applications.Dtos
+namespace Domain
 {
-    public class CreatePostDto
+    public class Post
     {
+        public int PostId { get; set; }
         public string Photo { get; set; }
         public string Text { get; set; }
+        public DateTime Date { get; set; }
     }
 }

@@ -4,16 +4,16 @@ using Persistence.EntityConfigurations;
 
 namespace Persistence
 {
-    public class PhotoExchangeDbContext : DbContext
+    public class PostExchangeDbContext : DbContext
     {
-        public DbSet<Photo> Photos { get; set; }
+        public DbSet<Post> Posts { get; set; }
 
-        public PhotoExchangeDbContext(DbContextOptions<PhotoExchangeDbContext> options) 
+        public PostExchangeDbContext(DbContextOptions<PostExchangeDbContext> options) 
             : base(options){}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new PhotoConfiguration());
+            modelBuilder.ApplyConfiguration(new PostConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -13,7 +13,7 @@ namespace Persistence
     {
         public static IServiceCollection AddPersistence(this IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<PhotoExchangeDbContext>(options =>
+            services.AddDbContext<PostExchangeDbContext>(options =>
             {
                 options.UseSqlServer(connectionString);
             });

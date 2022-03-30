@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Photo
+    public class User
     {
-        public int ImageId { get; set; }
-        public string Url { get; set; }
-        public string  Description { get; set; }
     }
 }

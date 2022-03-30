@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistence.EntityConfigurations
 {
-    internal class PhotoConfiguration : IEntityTypeConfiguration<Photo>
+    internal class PostConfiguration : IEntityTypeConfiguration<Post>
     {
-        public void Configure(EntityTypeBuilder<Photo> builder)
+        public void Configure(EntityTypeBuilder<Post> builder)
         {
-            builder.HasKey(key => key.ImageId);
+            builder.HasKey(key => key.PostId);
         }
     }
 }

@@ -1,53 +1,53 @@
 ﻿using Applications.Dtos;
-using Applications.Photo.Commands.CreatePhoto;
-using Applications.Photo.Commands.DeletePhoto;
-using Applications.Photo.Queries.GetPhotoDetails;
-using Applications.Photo.Queries.GetPhotos;
+using Applications.Post.Commands.CreatePost;
+using Applications.Post.Commands.DeletePost;
+using Applications.Post.Queries.GetPostDetails;
+using Applications.Post.Queries.GetPosts;
 using Domain;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace PhotoExchangeApi.Controllers
+namespace PostExchangeApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PhotoController : ControllerBase
+    public class PostController : ControllerBase
     {
         private readonly IMediator _mediator;
-        public PhotoController(IMediator mediator)
+        public PostController(IMediator mediator)
         {
             _mediator = mediator;
         }
-        [HttpGet("{imageId}")]
-        public async Task<ActionResult> GetDetails([FromRoute] int imageId)
+        [HttpGet("{postId}")]
+        public async Task<ActionResult> GetDetails([FromRoute] int postId)
         {
-            var queryResult = await _mediator.Send(new GetPhotoDetailsQuery(imageId));
+            var queryResult = await _mediator.Send(new GetPostDetailsQuery(postId));
             return Ok(queryResult);
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<GetPhoto>>> GetPhotos()
+        public async Task<ActionResult<List<GetPost>>> GetPosts()
         {
-            var queryResult = await _mediator.Send(new GetPhotosQuery());
+            var queryResult = await _mediator.Send(new GetPostsQuery());
             return Ok(queryResult);
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreatePhoto([FromBody] CreatePhotoDto createPhotoDto)
+        public async Task<ActionResult> CreatePost([FromBody] CreatePostDto createPostDto)
         {
-            var commandResult = await _mediator.Send(new CreatePhotoCommand()
+            var commandResult = await _mediator.Send(new CreatePostCommand()
             {
-                Url = createPhotoDto.Url,
-                Description = createPhotoDto.Description
+                Photo = createPostDto.Photo,
+                Text = createPostDto.Text,
             });
             return Ok();
         }
 
-        [HttpDelete("{imageId}")]
-        public async Task<ActionResult> DeletePhoto([FromRoute] int imageId)
+        [HttpDelete("{postId}")]
+        public async Task<ActionResult> DeletePost([FromRoute] int postId)
         {
-            var commandResult = await _mediator.Send(new DeletePhotoCommand(imageId));
+            var commandResult = await _mediator.Send(new DeletePostCommand(postId));
             return NotFound();
         }
     }

@@ -1,16 +1,16 @@
-﻿using Applications.Photo.Queries.GetPhotoDetails;
-using Applications.Photo.Queries.GetPhotos;
+﻿using Applications.Post.Queries.GetPostDetails;
+using Applications.Post.Queries.GetPosts;
 using AutoMapper;
 
 namespace Applications.AutoMapper.Profiles
 {
-    public class PhotoProfile : Profile
+    public class PostProfile : Profile
     {
-        public PhotoProfile()
+        public PostProfile()
         {
-            CreateMap<Domain.Photo, GetPhotoDetailsVm>()
+            CreateMap<Domain.Post, GetPostDetailsVm>()
                 .ReverseMap();
-            CreateMap<Domain.Photo, GetPhoto>()
+            CreateMap<Domain.Post, GetPost>()
                 .ReverseMap();
         }
     }
