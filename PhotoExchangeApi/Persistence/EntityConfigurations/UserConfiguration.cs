@@ -8,7 +8,6 @@ namespace Persistence.EntityConfigurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.HasKey(x => x.UserId);
             builder.HasMany(p => p.Posts).WithOne(u => u.User);
         }
     }

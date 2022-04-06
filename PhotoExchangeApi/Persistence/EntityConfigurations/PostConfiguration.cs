@@ -15,6 +15,8 @@ namespace Persistence.EntityConfigurations
         {
             builder.HasKey(key => key.PostId);
             builder.HasOne(p => p.User).WithMany(u => u.Posts);
+            builder.HasMany(l => l.Comments).WithOne(p => p.Post);
+            builder.HasMany(l => l.Likes).WithOne(p => p.Post);
         }
     }
 }

@@ -9,6 +9,8 @@ namespace Persistence
     public class PostExchangeDbContext : IdentityDbContext<User>
     {
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Like> Likes { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         public DbSet<User> Users { get; set; }
 
         public PostExchangeDbContext(DbContextOptions<PostExchangeDbContext> options) 
@@ -26,6 +28,8 @@ namespace Persistence
 
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new PostConfiguration());
+            modelBuilder.ApplyConfiguration(new CommentConfiguration());
+            modelBuilder.ApplyConfiguration(new LikeConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
