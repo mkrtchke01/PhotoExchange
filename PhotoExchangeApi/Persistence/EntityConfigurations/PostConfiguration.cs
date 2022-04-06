@@ -14,6 +14,7 @@ namespace Persistence.EntityConfigurations
         public void Configure(EntityTypeBuilder<Post> builder)
         {
             builder.HasKey(key => key.PostId);
+            builder.HasOne(p => p.User).WithMany(u => u.Posts);
         }
     }
 }

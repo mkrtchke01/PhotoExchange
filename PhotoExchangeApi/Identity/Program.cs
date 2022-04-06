@@ -1,6 +1,6 @@
+using Domain;
 using Identity;
 using Identity.Data;
-using Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
