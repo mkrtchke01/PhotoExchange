@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PNjdi7I5NQ2/txyGdyCJENnIUmfRZTkCfajIyIi555zdvKLho4KuB/NFulTsmYf+9ENRb+BBq41D6eOYPbbTUQ==",
+  "dgSpecHash": "mBpVeslsSREB04od+nN5jwr6qebSJXJ+oz+8Ge91vLxgtjaRaYwwVGxCmdQ3nGTJPB1X8vQr0b1GOSyTGLE2ug==",
   "success": true,
-  "projectFilePath": "D:\\.Net Projects\\PhotoExchange\\IdentityServer4\\IdentityServer4\\PhotoExchangeIdentity.csproj",
+  "projectFilePath": "D:\\.Net Projects\\PhotoExchange\\PhotoExchangeIS4\\IdentityServer4\\PhotoExchangeIdentity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
