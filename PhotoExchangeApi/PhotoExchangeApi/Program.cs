@@ -1,6 +1,5 @@
 using Applications;
 using Persistence;
-using Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddPersistence(builder.Configuration.GetConnectionString("DefaultConnection"));
-builder.Services.AddIdentity(builder.Configuration.GetConnectionString("DefaultConnection"));
 builder.Services.AddApplications();
 
 var app = builder.Build();
@@ -23,7 +21,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-app.UseIdentityServer();
 app.UseHttpsRedirection();
 app.UseEndpoints(endpoints =>
 {
