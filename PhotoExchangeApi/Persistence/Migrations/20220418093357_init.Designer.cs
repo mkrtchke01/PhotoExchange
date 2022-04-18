@@ -12,7 +12,7 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(PostExchangeDbContext))]
-    [Migration("20220412100741_init")]
+    [Migration("20220418093357_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
