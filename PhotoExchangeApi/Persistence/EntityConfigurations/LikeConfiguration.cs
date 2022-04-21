@@ -15,6 +15,7 @@ namespace Persistence.EntityConfigurations
         {
             builder.HasKey(i => i.LikeId);
             builder.HasOne(l => l.Post).WithMany(l => l.Likes);
+            builder.HasOne(p => p.User).WithMany(u => u.Likes).HasForeignKey(u => u.UserId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

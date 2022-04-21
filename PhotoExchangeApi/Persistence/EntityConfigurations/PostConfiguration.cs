@@ -14,7 +14,7 @@ namespace Persistence.EntityConfigurations
         public void Configure(EntityTypeBuilder<Post> builder)
         {
             builder.HasKey(key => key.PostId);
-            //builder.HasOne(p => p.User).WithMany(u => u.Posts);
+            builder.HasOne(p => p.User).WithMany(u => u.Posts).HasForeignKey(u => u.UserId).OnDelete(DeleteBehavior.NoAction);
             builder.HasMany(l => l.Comments).WithOne(p => p.Post);
             builder.HasMany(l => l.Likes).WithOne(p => p.Post);
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Applications.Dtos
+namespace Applications.Post.Commands.CreatePost
 {
     public class CreatePostDto
     {

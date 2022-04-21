@@ -1,11 +1,9 @@
-﻿using Applications.Dtos;
-using Applications.Post.Commands.CreatePost;
+﻿using Applications.Post.Commands.CreatePost;
 using Applications.Post.Commands.DeletePost;
 using Applications.Post.Queries.GetPostDetails;
 using Applications.Post.Queries.GetPosts;
-using Domain;
 using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PostExchangeApi.Controllers

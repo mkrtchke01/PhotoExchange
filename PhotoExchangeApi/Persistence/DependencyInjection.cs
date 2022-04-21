@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Persistence
@@ -9,7 +11,7 @@ namespace Persistence
         {
             services.AddDbContext<PostExchangeDbContext>(options =>
             {
-                options.UseSqlServer(connectionString, b=>b.MigrationsAssembly("PhotoExchangeApi"));
+                options.UseSqlServer(connectionString);
             });
             return services;
         }
