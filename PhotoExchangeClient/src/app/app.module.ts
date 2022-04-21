@@ -7,11 +7,13 @@ import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent
+    PostComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

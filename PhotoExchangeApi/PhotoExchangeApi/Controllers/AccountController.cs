@@ -18,7 +18,7 @@ namespace PhotoExchangeApi.Controllers
             _mediator = mediator;
         }
         [HttpPost]
-        [Route("api/Login")]
+        [Route("Login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
             var command = await _mediator.Send(new LoginCommand()
@@ -35,7 +35,7 @@ namespace PhotoExchangeApi.Controllers
         //}
 
         [HttpPost]
-        [Route("api/Register")]
+        [Route("Register")]
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
             var command = await _mediator.Send(new RegisterCommand()
