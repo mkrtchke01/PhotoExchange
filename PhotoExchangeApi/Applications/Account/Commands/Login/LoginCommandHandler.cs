@@ -1,11 +1,10 @@
-﻿
-using Applications.Account.Jwt;
-using Applications.Common.Exceptions;
-using Domain;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Identity;
+using PhotoExchangeApi.Applications.Account.Jwt;
+using PhotoExchangeApi.Applications.Common.Exceptions;
+using PhotoExchangeApi.Domain;
 
-namespace Applications.Account.Commands.Login
+namespace PhotoExchangeApi.Applications.Account.Commands.Login
 {
     internal class LoginCommandHandler : IRequestHandler<LoginCommand, JwtTokenDto>
     {

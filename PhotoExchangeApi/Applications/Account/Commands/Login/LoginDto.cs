@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Applications.Account.Commands.Login
+﻿
+namespace PhotoExchangeApi.Applications.Account.Commands.Login
 {
     public class LoginDto
     {

@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using Persistence;
+using PhotoExchangeApi.Persistence;
 
-namespace Applications.Post.Commands.CreatePost
+namespace PhotoExchangeApi.Applications.Post.Commands.CreatePost
 {
     internal class CreatePostCommandHandler : IRequestHandler<CreatePostCommand>
     {

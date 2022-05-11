@@ -1,8 +1,7 @@
-﻿
-using System.Text;
+﻿using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Applications.Account.Jwt
+namespace PhotoExchangeApi.Applications.Account.Jwt
 {
     internal class JwtOptions
     {

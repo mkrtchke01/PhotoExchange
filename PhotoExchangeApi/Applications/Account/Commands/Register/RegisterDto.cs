@@ -1,5 +1,5 @@
 ﻿
-namespace Applications.Account.Commands.Register
+namespace PhotoExchangeApi.Applications.Account.Commands.Register
 {
     public class RegisterDto
     {

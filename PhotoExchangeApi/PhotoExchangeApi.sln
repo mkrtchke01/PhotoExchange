@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{60985AC9-B38F-4C0F-8E15-5CC20F6CEC44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{C24EAF91-6583-4BCF-B4C5-7A2308931723}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi.Domain", "Domain\PhotoExchangeApi.Domain.csproj", "{C24EAF91-6583-4BCF-B4C5-7A2308931723}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Applications", "Applications\Applications.csproj", "{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi.Applications", "Applications\PhotoExchangeApi.Applications.csproj", "{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi.Persistence", "Persistence\PhotoExchangeApi.Persistence.csproj", "{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

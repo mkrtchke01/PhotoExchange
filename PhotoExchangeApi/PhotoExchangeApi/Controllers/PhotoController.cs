@@ -1,10 +1,9 @@
-﻿using Applications.Post.Commands.CreatePost;
-using Applications.Post.Commands.DeletePost;
-using Applications.Post.Queries.GetPostDetails;
-using Applications.Post.Queries.GetPosts;
-using MediatR;
-using Microsoft.AspNetCore.Authorization;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PhotoExchangeApi.Applications.Post.Commands.CreatePost;
+using PhotoExchangeApi.Applications.Post.Commands.DeletePost;
+using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
+using PhotoExchangeApi.Applications.Post.Queries.GetPosts;
 
 namespace PostExchangeApi.Controllers
 {

@@ -1,10 +1,10 @@
-﻿using Applications.Common.Exceptions;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Persistence;
+using PhotoExchangeApi.Persistence;
+using PhotoExchangeApi.Applications.Common.Exceptions;
 
-namespace Applications.Post.Queries.GetPostDetails
+namespace PhotoExchangeApi.Applications.Post.Queries.GetPostDetails
 {
     internal class GetPostDetailsQueryHandler : IRequestHandler<GetPostDetailsQuery, GetPostDetailsVm>
     {

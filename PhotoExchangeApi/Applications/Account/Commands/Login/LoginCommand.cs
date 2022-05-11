@@ -1,7 +1,7 @@
-﻿using Applications.Account.Jwt;
-using MediatR;
+﻿using MediatR;
+using PhotoExchangeApi.Applications.Account.Jwt;
 
-namespace Applications.Account.Commands.Login
+namespace PhotoExchangeApi.Applications.Account.Commands.Login
 {
     public class LoginCommand : IRequest<JwtTokenDto>
     {

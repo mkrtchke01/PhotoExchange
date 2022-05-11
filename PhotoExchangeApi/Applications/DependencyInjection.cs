@@ -1,14 +1,14 @@
 ﻿using System.Reflection;
-using Applications.Account.Jwt;
-using Domain;
+using PhotoExchangeApi.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Persistence;
+using PhotoExchangeApi.Persistence;
+using PhotoExchangeApi.Applications.Account.Jwt;
 
-namespace Applications
+namespace PhotoExchangeApi.Applications
 {
     public static class DependencyInjection
     {

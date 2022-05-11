@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Persistence;
+using PhotoExchangeApi.Persistence;
 
-namespace Applications.Post.Queries.GetPosts
+namespace PhotoExchangeApi.Applications.Post.Queries.GetPosts
 {
     internal class GetPostsQueryHandler : IRequestHandler<GetPostsQuery, List<GetPost>>
     {

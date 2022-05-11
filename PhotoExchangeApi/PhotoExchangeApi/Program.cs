@@ -1,11 +1,8 @@
-using Applications;
-using Domain;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.OpenApi.Models;
-using Persistence;
+using PhotoExchangeApi.Applications;
+using PhotoExchangeApi.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 

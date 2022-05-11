@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Applications.Post.Commands.CreatePost
+namespace PhotoExchangeApi.Applications.Post.Commands.CreatePost
 {
     public class CreatePostCommand : IRequest
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Domain
+namespace PhotoExchangeApi.Domain
 {
     public class User : IdentityUser
     {

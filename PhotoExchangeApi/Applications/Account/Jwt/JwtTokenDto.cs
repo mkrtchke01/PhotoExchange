@@ -1,6 +1,6 @@
 ﻿
 
-namespace Applications.Account.Jwt
+namespace PhotoExchangeApi.Applications.Account.Jwt
 {
     public class JwtTokenDto
     {

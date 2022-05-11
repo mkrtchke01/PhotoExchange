@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Applications\Applications.csproj" />
-    <ProjectReference Include="..\Persistence\Persistence.csproj" />
+    <ProjectReference Include="..\Applications\PhotoExchangeApi.Applications.csproj" />
+    <ProjectReference Include="..\Persistence\PhotoExchangeApi.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
-﻿using Applications.Account.Commands.Login;
-using Applications.Account.Commands.Register;
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using PhotoExchangeApi.Applications.Account.Commands.Login;
+using PhotoExchangeApi.Applications.Account.Commands.Register;
 
 namespace PhotoExchangeApi.Controllers
 {

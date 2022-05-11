@@ -1,5 +1,5 @@
 ﻿
-namespace Applications.Post.Queries.GetPostDetails
+namespace PhotoExchangeApi.Applications.Post.Queries.GetPostDetails
 {
     internal class GetPostDetailsVm
     {

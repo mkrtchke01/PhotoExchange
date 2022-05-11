@@ -1,5 +1,6 @@
 ﻿
-namespace Domain
+
+namespace PhotoExchangeApi.Domain
 {
     public class Like
     {

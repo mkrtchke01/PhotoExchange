@@ -1,6 +1,7 @@
-﻿using MediatR;
+﻿using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
+using MediatR;
 
-namespace Applications.Post.Queries.GetPostDetails
+namespace PhotoExchangeApi.Applications.Post.Queries.GetPostDetails
 {
     public class GetPostDetailsQuery : IRequest<GetPostDetailsVm>
     {

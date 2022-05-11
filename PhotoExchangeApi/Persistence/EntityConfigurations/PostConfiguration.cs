@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PhotoExchangeApi.Domain;
 
-namespace Persistence.EntityConfigurations
+namespace PhotoExchangeApi.Persistence.EntityConfigurations
 {
     internal class PostConfiguration : IEntityTypeConfiguration<Post>
     {

@@ -1,9 +1,9 @@
-﻿using Applications.Common.Exceptions;
-using MediatR;
+﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using Persistence;
+using PhotoExchangeApi.Persistence;
+using PhotoExchangeApi.Applications.Common.Exceptions;
 
-namespace Applications.Post.Commands.DeletePost
+namespace PhotoExchangeApi.Applications.Post.Commands.DeletePost
 {
     internal class DeletePostCommandHandler : IRequestHandler<DeletePostCommand>
     {

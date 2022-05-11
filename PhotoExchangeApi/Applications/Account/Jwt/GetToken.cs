@@ -1,9 +1,9 @@
 ﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using Domain;
+using PhotoExchangeApi.Domain;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Applications.Account.Jwt
+namespace PhotoExchangeApi.Applications.Account.Jwt
 {
     internal static class GetToken
     {

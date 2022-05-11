@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Applications.Post.Commands.DeletePost
+namespace PhotoExchangeApi.Applications.Post.Commands.DeletePost
 {
     public class DeletePostCommand : IRequest
     {

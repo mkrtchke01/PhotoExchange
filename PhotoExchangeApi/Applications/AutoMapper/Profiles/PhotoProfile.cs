@@ -1,8 +1,8 @@
-﻿using Applications.Post.Queries.GetPostDetails;
-using Applications.Post.Queries.GetPosts;
+﻿using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
+using PhotoExchangeApi.Applications.Post.Queries.GetPosts;
 using AutoMapper;
 
-namespace Applications.AutoMapper.Profiles
+namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
 {
     public class PostProfile : Profile
     {

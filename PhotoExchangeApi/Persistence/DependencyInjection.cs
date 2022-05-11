@@ -1,9 +1,7 @@
-﻿using Domain;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Persistence
+namespace PhotoExchangeApi.Persistence
 {
     public static class DependencyInjection
     {

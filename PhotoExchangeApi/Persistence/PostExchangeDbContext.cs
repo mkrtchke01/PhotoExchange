@@ -1,9 +1,9 @@
-﻿using Domain;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Persistence.EntityConfigurations;
+using PhotoExchangeApi.Domain;
+using PhotoExchangeApi.Persistence.EntityConfigurations;
 
-namespace Persistence
+namespace PhotoExchangeApi.Persistence
 {
     public class PostExchangeDbContext : IdentityDbContext<User>
     {

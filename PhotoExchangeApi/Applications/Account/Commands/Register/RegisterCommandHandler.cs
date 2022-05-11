@@ -1,10 +1,10 @@
-﻿using Applications.Account.Jwt;
-using Applications.Common.Exceptions;
-using Domain;
+﻿using PhotoExchangeApi.Applications.Common.Exceptions;
+using PhotoExchangeApi.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
+using PhotoExchangeApi.Applications.Account.Jwt;
 
-namespace Applications.Account.Commands.Register
+namespace PhotoExchangeApi.Applications.Account.Commands.Register
 {
     internal class RegisterCommandHandler : IRequestHandler<RegisterCommand, string>
     {
