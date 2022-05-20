@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhotoExchangeApi.Applications.Account.Commands.Login;
 using PhotoExchangeApi.Applications.Account.Commands.Register;
+using PhotoExchangeApi.Responses;
 
 namespace PhotoExchangeApi.Controllers
 {
@@ -44,7 +45,11 @@ namespace PhotoExchangeApi.Controllers
                 Password = registerDto.Password,
                 PasswordConfirm = registerDto.PasswordConfirm
             });
-            return Ok(command);
+            var token = new TokenResponse
+            {
+                Token = command
+            };
+            return Ok(token);
         }
     }
 

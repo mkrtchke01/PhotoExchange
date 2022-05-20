@@ -1,10 +1,10 @@
 <form action="" class="container widthForm bg-light">
     <div class="row align-items-center">
         <h3 class="text-center">Регистрация</h3>
-            <input type="text" class="mt-3 form-control" placeholder="Имя пользователя">
-            <input type="password" class="mt-3 form-control" placeholder="Пароль">
-            <input type="password" class="mt-3 form-control" placeholder="Повторите пароль">
-            <button class="btn btn-outline-dark mt-3">Зарегестрироваться</button>
+            <input type="text" class="mt-3 form-control" placeholder="Имя пользователя" [(ngModel)]="registerModel.userName" name="userName">
+            <input type="password" class="mt-3 form-control" placeholder="Пароль" [(ngModel)]="registerModel.password" name="password">
+            <input type="password" class="mt-3 form-control" placeholder="Повторите пароль" [(ngModel)]="registerModel.passwordConfirm" name="passwordConfirm">
+            <button class="btn btn-outline-dark mt-3" (click)="register()">Зарегестрироваться</button>
             <p class="text-center mt-4">Есть аккаунт? <a routerLink="/login">Вход</a></p>
     </div>
 </form>
