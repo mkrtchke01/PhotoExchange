@@ -19,7 +19,6 @@ export class RegistrationComponent implements OnInit {
 
   register(){
     this.accountService.register(this.registerModel);
-    console.log(this.registerModel);
   }
 
 }

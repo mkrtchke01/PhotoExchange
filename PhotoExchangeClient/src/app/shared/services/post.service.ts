@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,16 @@ export class PostService {
 
   readonly apiUrl = 'https://localhost:7242/api/Post'
 
-  getList() : Observable<any>{
-    return this.http.get(this.apiUrl);
+  getToken(){
+    var currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    var token = currentUser.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return headers;
   }
+
+  getList() : Observable<any>{
+      return this.http.get(this.apiUrl, {headers: this.getToken()});
+  }
+
+  
 }

@@ -11,14 +11,14 @@ export class LoginComponent implements OnInit {
 
   constructor(private accountService: AccountService) { }
 
-  loginModel: Login
+  loginModel: Login = new Login;
 
   
   ngOnInit(): void {
   }
 
-  login(loginModel: Login){
-    this.accountService.login(loginModel);
+  login(){
+    this.accountService.login(this.loginModel);
   }
 
 }

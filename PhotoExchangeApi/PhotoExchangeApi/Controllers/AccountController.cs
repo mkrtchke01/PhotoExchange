@@ -27,7 +27,11 @@ namespace PhotoExchangeApi.Controllers
                 UserName = loginDto.UserName,
                 Password = loginDto.Password
             });
-            return Ok(command);
+            var token = new TokenResponse
+            {
+                Token = command
+            };
+            return Ok(token);
         }
 
         //public IActionResult Logout()

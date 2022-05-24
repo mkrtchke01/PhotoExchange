@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Login } from '../models/login';
 import { Register } from '../models/register';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,25 @@ export class AccountService {
   token: any;
   tokenString: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   readonly apiUrl = 'https://localhost:7242/api/Account'
 
   login(login: Login){
-    return this.http.post(this.apiUrl + '/Login', login)
+    return this.http.post(this.apiUrl + '/Login', login).subscribe(data=>{
+      this.token = data;
+      this.tokenString = this.token.token;
+      localStorage.setItem('currentUser', JSON.stringify({token: this.tokenString, name: this.tokenString}));
+      this.router.navigate(['/posts']).then(()=>window.location.reload());
+    })
   }
 
   register(reg: Register){
     return this.http.post(this.apiUrl + '/Register', reg).subscribe(data=>{
       this.token = data;
       this.tokenString = this.token.token;
-      console.log(this.tokenString);
+      localStorage.setItem('currentUser', JSON.stringify({token: this.tokenString, name: this.tokenString}));
+      this.router.navigate(['/posts']).then(()=>window.location.reload());
     })
   }
 }
