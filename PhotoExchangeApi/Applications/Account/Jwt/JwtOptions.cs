@@ -8,7 +8,7 @@ namespace PhotoExchangeApi.Applications.Account.Jwt
         public const string Issuer = "JwtServer";
         public const string Audience = "JwtClient";
         private const string Key = "photoexchangekey!!!2022";
-        public static DateTime Lifetime = DateTime.Now.AddMinutes(1);
+        public static DateTime Lifetime = DateTime.Now.AddDays(1);
 
         public static SymmetricSecurityKey GetSymmetricSecurityKey()
         {

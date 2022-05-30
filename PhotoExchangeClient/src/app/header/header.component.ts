@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../shared/services/auth.service';
 
 
 @Component({
@@ -9,25 +10,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public authService: AuthService) { }
 
-  isAuthorithed: boolean = false;
 
   ngOnInit(): void {
   }
 
-  checkIsAuthorithed(){
-    var currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
-    if(currentUser.token == ''){
-      this.isAuthorithed = true;
-    }
-    else this.isAuthorithed= false;
-  }
-
   logoutClick(){
-    localStorage.clear();
-    this.isAuthorithed = false;
-    this.router.navigate(['/login']).then(()=>window.location.reload());
+    this.router.navigate(['/login']);
   }
 
 }

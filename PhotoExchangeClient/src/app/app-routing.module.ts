@@ -4,13 +4,14 @@ import { LoginComponent } from './account/login/login.component';
 import { RegistrationComponent } from './account/registration/registration.component';
 import { HeaderComponent } from './header/header.component';
 import { PostComponent } from './post/post.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
 
   {path: 'login', component: LoginComponent},
   {path:'registration', component: RegistrationComponent},
-  {path: 'posts', component: PostComponent}
   
+  {path: '', component: PostComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

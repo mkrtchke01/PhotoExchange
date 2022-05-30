@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Register } from 'src/app/shared/models/register';
-import { AccountService } from 'src/app/shared/services/account.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -9,16 +10,24 @@ import { AccountService } from 'src/app/shared/services/account.service';
 })
 export class RegistrationComponent implements OnInit {
 
+  constructor(private authService: AuthService, private router: Router) {
+    localStorage.clear();
+   }
+
   registerModel: Register = new Register;
-
-
-  constructor(private accountService: AccountService) { }
+  token: any;
+  tokenString: string;
 
   ngOnInit(): void {
   }
 
   register(){
-    this.accountService.register(this.registerModel);
+    this.authService.register(this.registerModel).subscribe(data=>{
+      this.token = data;
+      this.tokenString = this.token.token;
+      localStorage.setItem('token', this.tokenString);
+      this.router.navigate(['']);
+    });
   }
 
 }

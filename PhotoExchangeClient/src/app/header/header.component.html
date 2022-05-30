@@ -1,20 +1,18 @@
-<nav class="navbar  navbar-light bg-light">
+
+  <nav  *ngIf="authService.checkIsAuthorithed();" class="navbar headerCenter navbar-light w-50">
     <div class="">
-      <a class="navbar-brand m-3" type="button">Кнопка 1</a>
-      <a class="navbar-brand" type="button" mat-button>Кнопка 2</a>
-      <a class="navbar-brand" type="button" mat-button>Кнопка 3</a>
+        <h1>     
+           <a class="navbar-brand m-3" type="button">PhotoExchange</a>
+        </h1>
     </div>
     <div>
-      <div>
-        <div *ngIf="isAuthorithed; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock>
-            <a class="navbar-brand " type="button" routerLink="/login">Войти</a>
-            <a class="navbar-brand m-3" type="button" routerLink="/Registration">Регистрация</a>
-          </ng-template>
-          <ng-template #elseBlock>
-            <a class="navbar-brand m-3" type="button" (click)="logoutClick()">Выйти</a>
-  </ng-template>
-      </div>
+      <a class="navbar-brand" type="button" mat-button routerLink=""><i class="fa-solid fa-plus"></i></a>
+    </div>
+    <div>
+      <a class="navbar-brand" type="button" mat-button><i class="fa-solid fa-messages"></i></a>
+      <a class="navbar-brand" type="button" mat-button><i class="fa-solid fa-bell"></i></a>
+      <a class="navbar-brand" type="button" mat-button><i class="fa-solid fa-user"></i></a>
+      <a class="navbar-brand m-3" type="button" (click)="logoutClick()"><i class="fa-solid fa-right-from-bracket"></i></a>
     </div>
   </nav>
 <router-outlet></router-outlet>

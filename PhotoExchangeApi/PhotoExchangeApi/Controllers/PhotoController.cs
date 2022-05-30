@@ -5,7 +5,7 @@ using PhotoExchangeApi.Applications.Post.Commands.DeletePost;
 using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
 using PhotoExchangeApi.Applications.Post.Queries.GetPosts;
 
-namespace PostExchangeApi.Controllers
+namespace PhotoExchangeApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

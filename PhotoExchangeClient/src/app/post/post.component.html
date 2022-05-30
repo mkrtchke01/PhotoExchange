@@ -1,8 +1,18 @@
 <div class="container">
-    <div *ngFor="let data of postList">
+    <div *ngFor="let data of postList" class="blockPost">
         <div>
-            <img  class="img-thumbnail" src= "{{data.photo}}"/>
-            <h3>{{data.text}}</h3>
+            <h4 class="">{{data.userName}}</h4>
+        </div>
+        
+        <div class="text-center">
+            <img  class="imageSize" src= "{{data.photo}}"/>
+        </div>
+        <div class="mt-2">
+            <p class="bold">0 likes</p>
+        </div>
+        <div class="mt-2">
+            <p class="startBold">{{data.userName}}:</p>
+            <p class="start">{{data.text}}</p>
         </div>
     </div>
 </div>

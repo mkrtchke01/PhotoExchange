@@ -23,5 +23,10 @@ namespace PhotoExchangeApi.Persistence
             modelBuilder.ApplyConfiguration(new LikeConfiguration());
             base.OnModelCreating(modelBuilder);
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseLazyLoadingProxies();
+        }
     }
 }

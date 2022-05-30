@@ -17,8 +17,8 @@ namespace PhotoExchangeApi.Applications.Post.Queries.GetPosts
         }
         public async Task<List<GetPost>> Handle(GetPostsQuery request, CancellationToken cancellationToken)
         {
-            var post = await _context.Posts.ToListAsync(cancellationToken);
-            var result = _mapper.Map<List<GetPost>>(post);
+            var posts = await _context.Posts.ToListAsync(cancellationToken);
+            var result = _mapper.Map<List<GetPost>>(posts);
             return result;
 
         }

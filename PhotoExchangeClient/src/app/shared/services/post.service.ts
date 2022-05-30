@@ -11,15 +11,9 @@ export class PostService {
 
   readonly apiUrl = 'https://localhost:7242/api/Post'
 
-  getToken(){
-    var currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
-    var token = currentUser.token;
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return headers;
-  }
 
   getList() : Observable<any>{
-      return this.http.get(this.apiUrl, {headers: this.getToken()});
+      return this.http.get(this.apiUrl);
   }
 
   
