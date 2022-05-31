@@ -10,9 +10,12 @@ namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
         {
             CreateMap<Domain.Post, GetPostDetailsVm>()
                 .ReverseMap();
+
             CreateMap<Domain.Post, GetPost>()
                 .ForMember(userName => userName.UserName,
                     userName => userName.MapFrom(un=>un.User.UserName))
+                .ForMember(l=>l.Likes, 
+                    l=>l.MapFrom(like=>like.Likes.Count))
                 .ReverseMap();
         }
     }

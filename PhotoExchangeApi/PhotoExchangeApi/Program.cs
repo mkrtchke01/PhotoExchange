@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.OpenApi.Models;
 using PhotoExchangeApi.Applications;
+using PhotoExchangeApi.HubConfiguration;
 using PhotoExchangeApi.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,6 +46,8 @@ builder.Services.AddSwaggerGen(options =>
        
     });
 });
+builder.Services.AddSignalR(options =>
+    options.EnableDetailedErrors = true);
 
 
 var app = builder.Build();
@@ -71,6 +74,7 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
+    endpoints.MapHub<LikeHub>("/likes");
 });
 
 app.Run();
