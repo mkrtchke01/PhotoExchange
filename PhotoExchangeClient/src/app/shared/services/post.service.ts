@@ -15,6 +15,9 @@ export class PostService {
   getList() : Observable<any>{
       return this.http.get(this.apiUrl);
   }
+  getUserPosts() : Observable<any>{
+    return this.http.get(this.apiUrl + '/GetUserPosts');
+}
 
   
 }

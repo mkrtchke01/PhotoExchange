@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Login } from '../models/login';
 import { Register } from '../models/register';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 
 
@@ -32,5 +33,8 @@ export class AuthService {
 
   getToken(){
     return localStorage.getItem('token') || '';
+  }
+  getProfile(): Observable<any>{
+    return this.http.get(this.apiUrl + '/Profile');
   }
 }

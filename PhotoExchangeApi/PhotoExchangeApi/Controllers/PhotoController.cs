@@ -4,12 +4,13 @@ using PhotoExchangeApi.Applications.Post.Commands.CreatePost;
 using PhotoExchangeApi.Applications.Post.Commands.DeletePost;
 using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
 using PhotoExchangeApi.Applications.Post.Queries.GetPosts;
+using PhotoExchangeApi.Applications.Post.Queries.GetUserPosts;
 
 namespace PhotoExchangeApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PostController : ControllerBase
+    public class PostController : PhotoExchangeControllerBase
     {
         private readonly IMediator _mediator;
         public PostController(IMediator mediator)
@@ -27,6 +28,15 @@ namespace PhotoExchangeApi.Controllers
         public async Task<ActionResult<List<GetPost>>> GetPosts()
         {
             var queryResult = await _mediator.Send(new GetPostsQuery());
+            return Ok(queryResult);
+        }
+        [HttpGet("GetUserPosts")]
+        public async Task<ActionResult<List<GetPost>>> GetUserPosts()
+        {
+            var queryResult = await _mediator.Send(new GetUserPostsQuery()
+            {
+                UserId = UserId
+            });
             return Ok(queryResult);
         }
 

@@ -18,7 +18,8 @@ namespace PhotoExchangeApi.Applications.Account.Commands.Register
         {
             var user = new User()
             {
-                UserName = request.UserName
+                UserName = request.UserName,
+                PhotoProfile = "https://i.pinimg.com/280x280_RS/10/4b/ab/104babfeee3e488391873fe9d3dfb7ac.jpg"
             };
             var result = await _userManager.CreateAsync(user, request.Password);
             if (!result.Succeeded)

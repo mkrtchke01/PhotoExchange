@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Account\Queries\" />
     <Folder Include="Extensions\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>

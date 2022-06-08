@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.OpenApi.Models;
@@ -11,12 +12,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(options =>
 {
-    options.EnableEndpointRouting = false;
-    var policy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .Build();
-    options.Filters.Add(new AuthorizeFilter(policy));
+    options.Filters.Add(
+        new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()));
 });
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 builder.Services.AddPersistence(builder.Configuration.GetConnectionString("DefaultConnection"));
 builder.Services.AddApplications();
 builder.Services.AddSwaggerGen(options =>
@@ -39,7 +38,10 @@ builder.Services.AddSwaggerGen(options =>
                 {
                     Type = ReferenceType.SecurityScheme,
                     Id = "Bearer"
-                }
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header
             },
             Array.Empty<string>()
         }

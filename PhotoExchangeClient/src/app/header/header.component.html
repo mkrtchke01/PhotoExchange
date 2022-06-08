@@ -2,16 +2,16 @@
   <nav  *ngIf="authService.checkIsAuthorithed();" class="navbar headerCenter navbar-light w-50">
     <div class="">
         <h1>     
-           <a class="navbar-brand m-3" type="button">PhotoExchange</a>
+           <a class="navbar-brand m-3" type="button" routerLink="">PhotoExchange</a>
         </h1>
     </div>
     <div>
-      <a class="navbar-brand" type="button" mat-button routerLink=""><i class="fa-solid fa-plus"></i></a>
+      <a class="navbar-brand" type="button" routerLink="profile/create-post"><i class="fa-solid fa-plus"></i></a>
     </div>
     <div>
       <a class="navbar-brand" type="button" mat-button><i class="fa-solid fa-messages"></i></a>
       <a class="navbar-brand" type="button" mat-button><i class="fa-solid fa-bell"></i></a>
-      <a class="navbar-brand" type="button" mat-button><i class="fa-solid fa-user"></i></a>
+      <a class="navbar-brand" type="button" mat-button routerLink="/profile"><i class="fa-solid fa-user"></i></a>
       <a class="navbar-brand m-3" type="button" (click)="logoutClick()"><i class="fa-solid fa-right-from-bracket"></i></a>
     </div>
   </nav>

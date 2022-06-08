@@ -29,7 +29,7 @@ namespace PhotoExchangeApi.Applications.Account.Jwt
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id)
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id)
             };
             return claims;
         }

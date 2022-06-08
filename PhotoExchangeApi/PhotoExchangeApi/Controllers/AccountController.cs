@@ -3,14 +3,14 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhotoExchangeApi.Applications.Account.Commands.Login;
 using PhotoExchangeApi.Applications.Account.Commands.Register;
+using PhotoExchangeApi.Applications.Account.Queries.GetProfile;
 using PhotoExchangeApi.Responses;
 
 namespace PhotoExchangeApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
-    public class AccountController : ControllerBase
+    public class AccountController : PhotoExchangeControllerBase
     {
         private readonly IMediator _mediator;
 
@@ -19,6 +19,7 @@ namespace PhotoExchangeApi.Controllers
             _mediator = mediator;
         }
         [HttpPost]
+        [AllowAnonymous]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -34,12 +35,8 @@ namespace PhotoExchangeApi.Controllers
             return Ok(token);
         }
 
-        //public IActionResult Logout()
-        //{
-        //    return Ok();
-        //}
-
         [HttpPost]
+        [AllowAnonymous]
         [Route("Register")]
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
@@ -54,6 +51,16 @@ namespace PhotoExchangeApi.Controllers
                 Token = command
             };
             return Ok(token);
+        }
+        [HttpGet]
+        [Route("Profile")]
+        public async Task<IActionResult> Profile()
+        {
+            var query = await _mediator.Send(new GetProfileQuery()
+            {
+                UserId = UserId
+            });
+            return Ok(query);
         }
     }
 

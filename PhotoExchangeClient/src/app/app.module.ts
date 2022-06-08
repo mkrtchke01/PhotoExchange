@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { AccountComponent } from './account/account.component';
@@ -14,6 +13,7 @@ import { LoginComponent } from './account/login/login.component';
 import { RegistrationComponent } from './account/registration/registration.component';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
 import { ProfileComponent } from './account/profile/profile.component';
+import { CreatePostComponent } from './create-post/create-post.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,9 @@ import { ProfileComponent } from './account/profile/profile.component';
     HeaderComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileComponent
-  ],
+    ProfileComponent,
+    CreatePostComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

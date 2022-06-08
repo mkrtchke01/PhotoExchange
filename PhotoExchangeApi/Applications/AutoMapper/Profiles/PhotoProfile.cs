@@ -1,6 +1,7 @@
 ﻿using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
 using PhotoExchangeApi.Applications.Post.Queries.GetPosts;
 using AutoMapper;
+using PhotoExchangeApi.Applications.Post.Queries.GetUserPosts;
 
 namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
 {
@@ -16,6 +17,13 @@ namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
                     userName => userName.MapFrom(un=>un.User.UserName))
                 .ForMember(l=>l.Likes, 
                     l=>l.MapFrom(like=>like.Likes.Count))
+                .ReverseMap();
+
+            CreateMap<Domain.Post, GetUserPostDto>()
+                .ForMember(userName => userName.UserName,
+                    userName => userName.MapFrom(un => un.User.UserName))
+                .ForMember(l => l.Likes,
+                    l => l.MapFrom(like => like.Likes.Count))
                 .ReverseMap();
         }
     }
