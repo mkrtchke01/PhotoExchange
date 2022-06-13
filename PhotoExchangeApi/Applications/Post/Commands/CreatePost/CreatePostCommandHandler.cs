@@ -13,9 +13,15 @@ namespace PhotoExchangeApi.Applications.Post.Commands.CreatePost
         }
         public async Task<Unit> Handle(CreatePostCommand request, CancellationToken cancellationToken)
         {
+            byte[] imageBytes = null;
+            using (var binaryReader = new BinaryReader(request.Photo.OpenReadStream()))
+            {
+                imageBytes = binaryReader.ReadBytes((int)request.Photo.Length);
+            }
             var post = new Domain.Post
             {
-                Photo = request.Photo,
+                UserId = request.UserId,
+                Photo = imageBytes,
                 Text = request.Text,
                 Date = DateTime.Now
             };

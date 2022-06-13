@@ -17,6 +17,8 @@ namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
                     userName => userName.MapFrom(un=>un.User.UserName))
                 .ForMember(l=>l.Likes, 
                     l=>l.MapFrom(like=>like.Likes.Count))
+                .ForMember(p=>p.Photo,
+                    ph=>ph.MapFrom(x=> Convert.ToBase64String(x.Photo)))
                 .ReverseMap();
 
             CreateMap<Domain.Post, GetUserPostDto>()
@@ -24,6 +26,8 @@ namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
                     userName => userName.MapFrom(un => un.User.UserName))
                 .ForMember(l => l.Likes,
                     l => l.MapFrom(like => like.Likes.Count))
+                .ForMember(p => p.Photo,
+                    ph => ph.MapFrom(x => Convert.ToBase64String(x.Photo)))
                 .ReverseMap();
         }
     }

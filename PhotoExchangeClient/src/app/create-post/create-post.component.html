@@ -1,15 +1,27 @@
-<form novalidate #form="ngForm" enctype="multipart/form-data">
+<form #form="ngForm" enctype="multipart/form-data">
     <div class="center">
         <div class="container-fluid">
             <div class="row p-3">
                 <div class="col-6 "> 
-                    <div class="imageBlock">
-                        <button  class="btn btn-dark">Добавить фото <input type="file"/></button>
+                    <div *ngIf="isImage; else elseBlock">
+                        <img class="imageSizing" src="{{image}}">
                     </div>
+                    <ng-template #elseBlock>
+                        <div class="imageBlock">
+                            <input type="file" style="display: none" #fileInput (change)="onSelected($event)">
+                            <button class="btn btn-dark" type="button" (click)="fileInput.click()">Добавить фото</button>
+                        </div>
+                    </ng-template>
                 </div>
                 <div class="col-6">    
-                    <p>Описание</p>
+                    <div class="mt-3">
+                        <label class="form-label">Описание</label>
+                        <textarea class="form-control" rows="3" [(ngModel)]="createPostDto.text" name="text"></textarea>
+                      </div>
                 </div>
+            </div>
+            <div class="text-end">
+                <button class="btn btn-primary" (click)="uploadPost()">Отправить</button>
             </div>
         </div>
     </div>

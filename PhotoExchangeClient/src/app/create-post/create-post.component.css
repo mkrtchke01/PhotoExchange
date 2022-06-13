@@ -10,9 +10,15 @@
 .imageBlock{
     width: 75%;
     height: 400px;
-    max-height: 400px;
+    max-height: 500px;
     min-height: 200px;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+
+.imageSizing{
+    width: 100%;
+    height: auto;
 }

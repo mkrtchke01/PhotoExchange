@@ -12,7 +12,7 @@ using PhotoExchangeApi.Persistence;
 namespace PhotoExchangeApi.Persistence.Migrations
 {
     [DbContext(typeof(PostExchangeDbContext))]
-    [Migration("20220511120144_init")]
+    [Migration("20220608103851_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,9 +223,9 @@ namespace PhotoExchangeApi.Persistence.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Photo")
+                    b.Property<byte[]>("Photo")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Text")
                         .IsRequired()
@@ -283,6 +283,10 @@ namespace PhotoExchangeApi.Persistence.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("PhotoProfile")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
