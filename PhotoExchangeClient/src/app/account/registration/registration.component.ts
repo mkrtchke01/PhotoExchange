@@ -22,12 +22,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   register(){
-    this.authService.register(this.registerModel).subscribe(data=>{
-      this.token = data;
-      this.tokenString = this.token.token;
-      localStorage.setItem('token', this.tokenString);
-      this.router.navigate(['']);
-    });
+    this.authService.register(this.registerModel);
   }
 
 }

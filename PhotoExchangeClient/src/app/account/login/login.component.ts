@@ -23,12 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.authService.login(this.loginModel).subscribe(data=>{
-      this.token = data;
-      this.tokenString = this.token.token;
-      localStorage.setItem('token', this.tokenString);
-      this.router.navigate(['']);
-    });
+    this.authService.login(this.loginModel);
   }
 
 }

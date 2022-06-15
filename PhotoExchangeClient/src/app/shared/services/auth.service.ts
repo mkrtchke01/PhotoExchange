@@ -20,11 +20,21 @@ export class AuthService {
   readonly apiUrl = 'https://localhost:7242/api/Account';
 
   login(login: Login){
-    return this.http.post(this.apiUrl + '/Login', login);
+    return this.http.post(this.apiUrl + '/Login', login).subscribe(data=>{
+      this.token = data;
+      this.tokenString = this.token.token;
+      localStorage.setItem('token', this.tokenString);
+      this.router.navigate(['']);
+    });
   }
 
   register(reg: Register){
-    return this.http.post(this.apiUrl + '/Register', reg);
+    return this.http.post(this.apiUrl + '/Register', reg).subscribe(data=>{
+      this.token = data;
+      this.tokenString = this.token.token;
+      localStorage.setItem('token', this.tokenString);
+      this.router.navigate(['']);
+    });
   }
 
   checkIsAuthorithed(){
@@ -32,6 +42,9 @@ export class AuthService {
   }
 
   getToken(){
+    return localStorage.getItem('token') || '';
+  }
+  refreshToken(){
     return localStorage.getItem('token') || '';
   }
   getProfile(): Observable<any>{
