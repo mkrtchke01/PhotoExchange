@@ -1,6 +1,8 @@
 ﻿using PhotoExchangeApi.Applications.Common.Exceptions;
 using PhotoExchangeApi.Domain;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using PhotoExchangeApi.Applications.Account.Jwt;
 
@@ -19,7 +21,7 @@ namespace PhotoExchangeApi.Applications.Account.Commands.Register
             var user = new User()
             {
                 UserName = request.UserName,
-                PhotoProfile = "https://i.pinimg.com/280x280_RS/10/4b/ab/104babfeee3e488391873fe9d3dfb7ac.jpg"
+                PhotoProfile = "https://images.macrumors.com/t/n4CqVR2eujJL-GkUPhv1oao_PmI=/1600x/article-new/2019/04/guest-user-250x250.jpg"
             };
             var result = await _userManager.CreateAsync(user, request.Password);
             if (!result.Succeeded)

@@ -17,6 +17,8 @@ namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
                     userName => userName.MapFrom(un=>un.User.UserName))
                 .ForMember(l=>l.Likes, 
                     l=>l.MapFrom(like=>like.Likes.Count))
+                .ForMember(userPhoto => userPhoto.UserPhoto,
+                    up=>up.MapFrom(u=>u.User.PhotoProfile))
                 .ForMember(p=>p.Photo,
                     ph=>ph.MapFrom(x=> Convert.ToBase64String(x.Photo)))
                 .ReverseMap();

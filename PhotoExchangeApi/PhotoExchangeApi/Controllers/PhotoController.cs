@@ -1,5 +1,6 @@
 ﻿using System.Net.Mime;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PhotoExchangeApi.Applications.Post.Commands.CreatePost;
 using PhotoExchangeApi.Applications.Post.Commands.DeletePost;
@@ -62,6 +63,7 @@ namespace PhotoExchangeApi.Controllers
             return NotFound();
         }
         [HttpPost("ImageHandler")]
+        [AllowAnonymous]
         public ActionResult<ImageHandlerResponse> ImageHandler([FromForm] ImageHandlerRequest imageHandler)
         {
             byte[] imageBytes = null;

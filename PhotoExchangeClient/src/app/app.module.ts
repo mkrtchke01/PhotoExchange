@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
@@ -30,7 +32,9 @@ import { CreatePostComponent } from './create-post/create-post.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
@@ -39,6 +43,8 @@ import { CreatePostComponent } from './create-post/create-post.component';
       multi:true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [CreatePostComponent]
 })
 export class AppModule { }

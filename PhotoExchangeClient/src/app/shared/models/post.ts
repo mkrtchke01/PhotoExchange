@@ -3,5 +3,6 @@ export class Post {
     photo: string;
     text: string;
     userName: string;
+    userPhoto: string
     likes: number;
 }

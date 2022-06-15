@@ -32,12 +32,10 @@
                    <p>подписок</p>
                </div>
             </div>
-
-            
             <div class="mt-5 row">
-                <div class="col-sm-4 p-2" *ngFor="let data of userPostList">
+                <div class="col-4 p-2" *ngFor="let data of userPostList">
                     <div>
-                        <img class="img-thumbnail" src="data:image/png;base64,{{data.photo}}">
+                        <img class="img-fluid imagePostSize" src="data:image/png;base64,{{data.photo}}">
                     </div>
                 </div>
             </div>

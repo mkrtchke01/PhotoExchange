@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
 
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CreatePostComponent } from '../create-post/create-post.component';
+
+
 
 
 
@@ -12,7 +16,7 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router, public authService: AuthService) { }
+  constructor(private router: Router, public authService: AuthService, public dialog: MatDialog) { }
 
   formModal: any;
 
@@ -22,6 +26,14 @@ export class HeaderComponent implements OnInit {
 
   logoutClick(){
     this.router.navigate(['/login']);
+  }
+
+  openCreatePostDialog(): void {
+    const dialogRef = this.dialog.open(CreatePostComponent, {
+      width: '50%',
+      height: '80%'
+    });
+    dialogRef.afterClosed().subscribe();
   }
 
 }
