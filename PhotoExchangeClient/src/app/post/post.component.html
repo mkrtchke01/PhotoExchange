@@ -1,0 +1,29 @@
+<div class="container">
+    <div *ngFor="let data of postList" class="blockPost">
+        <div class="row">
+            <div class="col-1">
+                <img class="profileImage" src="{{data.userPhoto}}" alt="">
+            </div>
+            <div class="col">
+                <h4 class="col">{{data.userName}}</h4>
+            </div>
+        </div>
+        
+        <div class="text-center pt-2">
+            <img  class="img-fluid imageSize" src= "data:image/png;base64,{{data.photo}}"/>
+        </div>
+        <div class="mt-2 row p-2">
+            <div class="col">
+                <p class="bold text-left">{{data.likes}} likes</p>
+            </div>
+            <div class="col text-end">
+                <button class="text-right" (click)="getPostList(data.userName, data.postId)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+        </div>
+        <div class="mt-2">
+            <p class="startBold">{{data.userName}}:</p>
+            <p class="start">{{data.text}}</p>
+        </div>
+    </div>
+</div>
+

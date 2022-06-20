@@ -1,0 +1,8 @@
+.headerCenter{
+    min-width: 500px;
+    max-width: 1000px;
+    margin: auto;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(37, 34, 34);
+    border-bottom-style: solid;
+}

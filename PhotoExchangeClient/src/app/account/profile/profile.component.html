@@ -1,0 +1,52 @@
+    <div class="center">
+        <div class="container-fluid">
+            <div class="row border p-3">
+                <div class="col-4"> 
+                    <div>
+                        <img class="image" src="{{profile.photoProfile}}" alt="">
+                    </div>
+                </div>
+                <div class="col-8">    
+                    <div class="row">
+                        <div class="col">
+                            <p class="fw-normal fs-3">{{profile.userName}}</p>
+                        </div>
+                        <div class="col text-end">
+                            <button class="btn btn-outline-dark">Редактировать</button>
+                        </div>
+                    </div> 
+                    <p class="fw-normal fs-6 w-75">Описание в котором ну допустим много символов</p>
+                </div>
+            </div>
+            <div class="row border-bottom border-dark p-3">
+                <div class="col text-center">
+                    <p class="mb-0 fw-bold">0</p>
+                    <p class="">публикаций</p>
+                </div>
+                <div class="col text-center">
+                   <p class="mb-0 fw-bold">0</p>
+                   <p>подписчиков</p>
+               </div>
+               <div class="col text-center">
+                   <p class="mb-0 fw-bold">0</p>
+                   <p>подписок</p>
+               </div>
+            </div>
+            <div class="mt-5 row">
+                <div class="col-4 p-2" *ngFor="let data of userPostList">
+                    <div>
+                        <img class="img-fluid imagePostSize" src="data:image/png;base64,{{data.photo}}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    
+
+
+    

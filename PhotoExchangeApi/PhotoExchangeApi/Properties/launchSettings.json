@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "PhotoExchangeApi": {
+    "PostExchangeApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
