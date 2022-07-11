@@ -3,21 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi", "PhotoExchangeApi\PhotoExchangeApi.csproj", "{5F6BA98B-B311-4387-8508-D8ED2A5211A3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5731241B-DCCC-43D1-B57B-4381A0F7CF39}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{F0B9F0CF-A5B9-487C-BA71-48D103A29CD6}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8D210420-9265-4801-9C8D-262426544AAD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{60985AC9-B38F-4C0F-8E15-5CC20F6CEC44}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi.Domain", "Domain\PhotoExchangeApi.Domain.csproj", "{C24EAF91-6583-4BCF-B4C5-7A2308931723}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi.Applications", "Applications\PhotoExchangeApi.Applications.csproj", "{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhotoExchangeApi.Persistence", "Persistence\PhotoExchangeApi.Persistence.csproj", "{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoExchangeApi", "PhotoExchangeApi\PhotoExchangeApi.csproj", "{5F6BA98B-B311-4387-8508-D8ED2A5211A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,27 +15,9 @@ Global
 		{5F6BA98B-B311-4387-8508-D8ED2A5211A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F6BA98B-B311-4387-8508-D8ED2A5211A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F6BA98B-B311-4387-8508-D8ED2A5211A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C24EAF91-6583-4BCF-B4C5-7A2308931723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C24EAF91-6583-4BCF-B4C5-7A2308931723}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C24EAF91-6583-4BCF-B4C5-7A2308931723}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C24EAF91-6583-4BCF-B4C5-7A2308931723}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5F6BA98B-B311-4387-8508-D8ED2A5211A3} = {8D210420-9265-4801-9C8D-262426544AAD}
-		{C24EAF91-6583-4BCF-B4C5-7A2308931723} = {5731241B-DCCC-43D1-B57B-4381A0F7CF39}
-		{FBA94E6B-0782-407E-B2A7-1B30DFEFCF24} = {5731241B-DCCC-43D1-B57B-4381A0F7CF39}
-		{EE4C6147-BF38-4794-AF4E-DC6A4DAB792E} = {F0B9F0CF-A5B9-487C-BA71-48D103A29CD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E1045A4-6EEE-4D9E-8548-4E21FFAD1E3A}
