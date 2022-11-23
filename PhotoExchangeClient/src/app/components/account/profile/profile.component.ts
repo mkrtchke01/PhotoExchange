@@ -13,23 +13,23 @@ export class ProfileComponent implements OnInit {
 
   constructor(private authService: AuthService, private postService: PostService) { }
 
-  profile: Profile = new Profile;
-  userPostList: Post[];
+  profile: Profile = new Profile
+  userPostList: Post[]
 
   ngOnInit(): void {
-   this.getProfile();
-   this.getUserPosts();
+   this.getProfile()
+   this.getUserPosts()
   }
 
   getProfile(){
     this.authService.getProfile().subscribe(data=>{
-      this.profile = data;
+      this.profile = data
     })
   }
   getUserPosts(){
     this.postService.getUserPosts().subscribe(data=>{
-      this.userPostList = data;
-      console.log(data);
+      this.userPostList = data
+      console.log(data)
     })
   }
 }

@@ -47,13 +47,13 @@ public class PostController : PhotoExchangeControllerBase
     }
 
     [HttpPost("UploadPost")]
-    public async Task<ActionResult> CreatePost([FromForm] CreatePostRequest createPostDto)
+    public async Task<ActionResult> CreatePost([FromForm] CreatePostRequest createPostRequest)
     {
         await _mediator.Send(new CreatePostCommand
         {
             UserId = UserId,
-            Photo = createPostDto.Photo,
-            Text = createPostDto.Text
+            Photo = createPostRequest.Photo,
+            Text = createPostRequest.Text
         });
         return Ok();
     }

@@ -4,7 +4,7 @@ import * as signalR from '@aspnet/signalr'
 @Injectable({
   providedIn: 'root'
 })
-export class SignalRService {
+export class SignalrService {
 
   constructor() { }
 
@@ -16,17 +16,17 @@ export class SignalRService {
     .withUrl('https://localhost:7242/likes',{
       skipNegotiation:true,
       transport: signalR.HttpTransportType.WebSockets
-    }).build();
+    }).build()
     this.hubConnection.start().then(()=>
     {
-      console.log('Hub started!');
+      console.log('Hub started!')
     })
     .catch(err=>console.log('error'))
   }
   LikeHubServer(userName: string, postId: number){
-    this.hubConnection.invoke("LikeHubServer", userName, postId);
+    this.hubConnection.invoke("LikeHubServer", userName, postId)
   }
   askServerListener(){
-    this.hubConnection.on("askServerResponse", (likesCount) => { likesCount});
+    this.hubConnection.on("askServerResponse", (likesCount) => { likesCount})
   }
 }

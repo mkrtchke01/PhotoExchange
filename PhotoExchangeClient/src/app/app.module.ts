@@ -4,29 +4,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material/material.module';
+import { MaterialModule } from './shared/Modules/material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { PostComponent } from './post/post.component';
-import { AccountComponent } from './account/account.component';
-import { HeaderComponent } from './header/header.component';
-import { LoginComponent } from './account/login/login.component';
-import { RegistrationComponent } from './account/registration/registration.component';
-import { TokenInterceptorService } from './shared/services/token-interceptor.service';
-import { ProfileComponent } from './account/profile/profile.component';
-import { CreatePostComponent } from './create-post/create-post.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { RegistrationComponent } from './components/account/registration/registration.component';
+import { TokenInterceptor } from './shared/interseptors/token-interseptor';
+import { ProfileComponent } from './components/account/profile/profile.component';
+import { CreatePostComponent } from './components/posts/create-post/create-post.component';
+import { GetAllPostsComponent } from './components/posts/get-all-posts/get-all-posts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent,
-    AccountComponent,
     HeaderComponent,
     LoginComponent,
     RegistrationComponent,
     ProfileComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    GetAllPostsComponent
     ],
   imports: [
     BrowserModule,
@@ -39,7 +37,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
   providers: [
     {
       provide:HTTP_INTERCEPTORS,
-      useClass:TokenInterceptorService,
+      useClass:TokenInterceptor,
       multi:true
     }
   ],
