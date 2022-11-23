@@ -1,10 +1,9 @@
-﻿
-using MediatR;
+﻿using MediatR;
+using PhotoExchangeApi.Applications.Responses;
 
-namespace PhotoExchangeApi.Applications.Account.Queries.GetProfile
+namespace PhotoExchangeApi.Applications.Account.Queries.GetProfile;
+
+public class GetProfileQuery : IRequest<GetProfileResponse>
 {
-    public class GetProfileQuery: IRequest<GetProfileDto>
-    {
-        public string UserId { get; set; }
-    }
+    public string UserId { get; set; }
 }

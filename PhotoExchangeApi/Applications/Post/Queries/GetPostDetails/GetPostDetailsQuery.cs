@@ -1,15 +1,14 @@
-﻿using PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
-using MediatR;
+﻿using MediatR;
+using PhotoExchangeApi.Applications.Responses;
 
-namespace PhotoExchangeApi.Applications.Post.Queries.GetPostDetails
+namespace PhotoExchangeApi.Applications.Post.Queries.GetPostDetails;
+
+public class GetPostDetailsQuery : IRequest<GetPostDetailsResponse>
 {
-    public class GetPostDetailsQuery : IRequest<GetPostDetailsVm>
+    public GetPostDetailsQuery(int postId)
     {
-        public int PostId { get; set; }
-
-        public GetPostDetailsQuery(int postId)
-        {
-            PostId = postId;
-        }
+        PostId = postId;
     }
+
+    public int PostId { get; set; }
 }

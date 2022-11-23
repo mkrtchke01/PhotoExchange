@@ -1,8 +1,6 @@
-﻿using MediatR;
+﻿namespace PhotoExchangeApi.Applications.Requests;
 
-namespace PhotoExchangeApi.Applications.Account.Commands.Register;
-
-public class RegisterCommand : IRequest<string>
+public class RegisterRequest
 {
     public string UserName { get; set; }
     public string Password { get; set; }

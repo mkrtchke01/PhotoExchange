@@ -20,7 +20,7 @@ builder.Services.AddPersistence(builder.Configuration.GetConnectionString("Defau
 builder.Services.AddApplications();
 builder.Services.AddSwaggerGen(options =>
 {
-    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme",
         Name = "Authorization",
@@ -45,7 +45,6 @@ builder.Services.AddSwaggerGen(options =>
             },
             Array.Empty<string>()
         }
-       
     });
 });
 builder.Services.AddSignalR(options =>

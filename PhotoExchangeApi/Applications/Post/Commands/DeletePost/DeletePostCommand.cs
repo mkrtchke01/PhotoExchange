@@ -1,14 +1,13 @@
 ﻿using MediatR;
 
-namespace PhotoExchangeApi.Applications.Post.Commands.DeletePost
-{
-    public class DeletePostCommand : IRequest
-    {
-        public int PostId { get; set; }
+namespace PhotoExchangeApi.Applications.Post.Commands.DeletePost;
 
-        public DeletePostCommand(int postId)
-        {
-            PostId = postId;
-        }
+public class DeletePostCommand : IRequest
+{
+    public DeletePostCommand(int postId)
+    {
+        PostId = postId;
     }
+
+    public int PostId { get; set; }
 }

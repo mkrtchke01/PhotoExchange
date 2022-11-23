@@ -1,16 +1,14 @@
-﻿
-using AutoMapper;
-using PhotoExchangeApi.Applications.Account.Queries.GetProfile;
+﻿using AutoMapper;
+using PhotoExchangeApi.Applications.Responses;
 using PhotoExchangeApi.Domain;
 
-namespace PhotoExchangeApi.Applications.AutoMapper.Profiles
+namespace PhotoExchangeApi.Applications.AutoMapper.Profiles;
+
+internal class AccountProfile : Profile
 {
-    internal class AccountProfile : Profile
+    public AccountProfile()
     {
-        public AccountProfile()
-        {
-            CreateMap<User, GetProfileDto>()
-                .ReverseMap();
-        }
+        CreateMap<User, GetProfileResponse>()
+            .ReverseMap();
     }
 }

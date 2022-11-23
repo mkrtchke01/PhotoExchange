@@ -1,9 +1,9 @@
 ﻿using MediatR;
+using PhotoExchangeApi.Applications.Responses;
 
-namespace PhotoExchangeApi.Applications.Post.Queries.GetUserPosts
+namespace PhotoExchangeApi.Applications.Post.Queries.GetUserPosts;
+
+public class GetUserPostsQuery : IRequest<List<GetUserPostResponse>>
 {
-    public class GetUserPostsQuery : IRequest<List<GetUserPostDto>>
-    {
-        public string UserId { get; set; }
-    }
+    public string UserId { get; set; }
 }
