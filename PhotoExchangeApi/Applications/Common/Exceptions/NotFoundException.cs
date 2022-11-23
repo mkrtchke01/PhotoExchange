@@ -1,8 +1,8 @@
-﻿
-namespace PhotoExchangeApi.Applications.Common.Exceptions
+﻿namespace PhotoExchangeApi.Applications.Common.Exceptions;
+
+internal class NotFoundException : Exception
 {
-    internal class NotFoundException : Exception
+    public NotFoundException(string name, object key) : base($"Entity {name} {key} not found")
     {
-        public NotFoundException(string name, object key) : base($"Entity {name} {key} not found"){}
     }
 }
