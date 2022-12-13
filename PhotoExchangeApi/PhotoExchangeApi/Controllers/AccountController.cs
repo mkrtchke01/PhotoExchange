@@ -22,8 +22,8 @@ public class AccountController : PhotoExchangeControllerBase
 
     [HttpPost]
     [AllowAnonymous]
-    [Route("Login")]
-    public async Task<IActionResult> Login(LoginRequest loginRequest)
+    [Route("SignIn")]
+    public async Task<IActionResult> SignIn(LoginRequest loginRequest)
     {
         var command = await _mediator.Send(new LoginCommand
         {
@@ -39,8 +39,8 @@ public class AccountController : PhotoExchangeControllerBase
 
     [HttpPost]
     [AllowAnonymous]
-    [Route("Register")]
-    public async Task<IActionResult> Register(RegisterRequest registerRequest)
+    [Route("SignUp")]
+    public async Task<IActionResult> SignUp(RegisterRequest registerRequest)
     {
         var command = await _mediator.Send(new RegisterCommand
         {
